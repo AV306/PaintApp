@@ -23,4 +23,4 @@ Click any of the 6 colored boxes at the top-right corner to change the pen color
 
 Modify `drawingCanvasWidth` and `drawingCanvasHeight` to change the height and width of the drawing canvas.
 
-The unobsfucated code can be requested by pinging AV3_08#5078 on Discord.
+The code will be unobsfucated on 12 July 2021.
