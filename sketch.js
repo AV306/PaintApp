@@ -56,6 +56,7 @@ function preload() {
 
 
 function setup() {
+  document.getElementById("app").style.cursor = "crosshair";
   createCanvas(1200 + 151, 1200 + 60); //...I'm just gonna trust this is a square. Edit: It is.
   background(220);
   stroke(0);
