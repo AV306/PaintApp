@@ -23,4 +23,4 @@ Click any of the 6 colored boxes at the top-right corner to change the pen color
 
 Modify `drawingCanvasWidth` and `drawingCanvasHeight` to change the height and width of the drawing canvas.
 
-The code will be unobsfucated on 12 July 2021.
+Have fun!
