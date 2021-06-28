@@ -69,7 +69,6 @@ function setup() {
   image(drawRect, 0, 115, 40, 40);
   image(drawCircle, 45, 115, 40, 40);
   image(fillCanvas, 90, 115, 40, 40);
-  //image(fillCanvas, 90, 115, 40, 40);
 
   
   fill("#ff0000"); rect(0, 0, 50, 30); //red swatch
@@ -188,9 +187,9 @@ function draw() {
   brushSizeText = "Brush size: " + brushSize;
   toolText = " Tool: " + tool;
 
-  
+
   fill(220); noStroke(); 
-  rect(width - 700, 0, 700, 35); //These keeps the text from "bolding".
+  rect(width - 705, 0, 705, 35); //These keeps the text from "bolding".
 
   rect(0, 210, 150, 25); //rects for labels at side (in order)
   rect(0, 340, 150, 25);
@@ -316,6 +315,7 @@ function toolHandler() {
       image(addText, 90, 70, 40, 40); 
       image(drawRect, 0, 115, 40, 40);
       image(drawCircle, 45, 115, 40, 40);
+      image(fillCanvas, 90, 115, 40, 40);
       break;
       
     case "eraser":
@@ -495,7 +495,7 @@ function clearCanvas() {
 
 function saveCanvasAsImage() {
   toSave = get(151, 60, width - 151, height - 60);
-  toSave.save("Image.png");
+  toSave.save("canvas.png");
 
 }
 
