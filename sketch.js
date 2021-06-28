@@ -188,22 +188,23 @@ function draw() {
   brushSizeText = "Brush size: " + brushSize;
   toolText = " Tool: " + tool;
 
+  
   fill(220); noStroke(); 
   rect(width - 700, 0, 700, 35); //These keeps the text from "bolding".
 
-  rect(0, 210, 150, 25); //rect for labels
+  rect(0, 210, 150, 25); //rects for labels at side (in order)
   rect(0, 340, 150, 25);
   rect(0, 470, 150, 25);
   rect(0, 600, 150, 25);
 
   fill('black'); textSize(20);
   
-  text(brushSizeText, width - 500, 25);
+  text(brushSizeText, width - 500, 25); //top bar text
   text(toolText, width - 330, 25);
-  text('(c) 2021 AV306', width - 700, 25);
+  text('© 2021 AV306', width - 700, 25);
   text('Color: ', width - 190, 25);
 
-  text('Input hex value:', 0, 230);
+  text('Input color / hex:', 0, 230);
   text('X, Y of shape:', 0, 360);
   text('W, H of shape:', 0, 490);
   text('Text to add:', 0, 620);
