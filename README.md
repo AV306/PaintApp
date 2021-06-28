@@ -6,9 +6,9 @@ Have fun!
 
 (text below is copypasta from docs.md)
 
-# GNU JSIM DOCS
+## GNU JSIM DOCS
 
-## How to use: 
+### How to use: 
 
 Click the icons to change the tool type. 
 
