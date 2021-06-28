@@ -105,6 +105,11 @@ function setup() {
   saveButton.size(100, 30);
   saveButton.mousePressed(saveCanvasAsImage);
 
+  let docsButton = createButton('How to use');
+  docsButton.position(0, height - 30);
+  docsButton.size(100, 30);
+  docsButton.mousePressed(openDocs);
+
   let brushTypeSel = createSelect('Select Brush Type');
   brushTypeSel.position(190, 15);
   brushTypeSel.size(100, 30);
@@ -139,6 +144,7 @@ function setup() {
   textToAddInput.position(0, 630);
   textToAddInput.size(100, 30);
   textToAddInput.input(textToAddInputEvent);
+
   
   
   /*
@@ -551,6 +557,7 @@ function textToAddInputEvent() {textToAdd = this.value();}
 function hexInputEvent() {penCol = this.value(); }
 function colPickerEvent() {penCol = this.value();}
 function brushTypeSelEvent() {brushType = this.value();}
+function openDocs() {window.open('https://av306.github.io/GNU-JSIM/docs.md')}
 
 
 function getRngCol() {
