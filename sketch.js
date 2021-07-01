@@ -16,10 +16,13 @@
 */
 
 //WOO LET'S GO
-//Last modified 15/6/2021 5:03 PM
+//Last modified 
 
 
-let penCol = '#ffffff'; //default pen color 
+
+let penCol = '#ffffff'; //default pen color: white
+
+let rainbow = []; //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH
 
 let brushSize = 5;
 
@@ -118,6 +121,7 @@ function setup() {
   brushTypeSel.option('splatter');
   brushTypeSel.option('wied');
   brushTypeSel.option('wieder');
+  brushTypeSel.option('rainbow');
   brushTypeSel.changed(brushTypeSelEvent);
 
   let startXInput = createInput(''); //Input for X of rect
@@ -312,6 +316,10 @@ function toolHandler() {
           wiederHandler();
           break;
 
+        case 'rainbow':
+          rainbowHandler();
+          break;
+
       }
 
       noStroke(); fill(220);
@@ -407,6 +415,8 @@ function toolHandler() {
 
 //Block of handlers
 function penHandler() { //standard brush type handler
+  //colorMode(RGB);
+
   if (mouseIsPressed) {   
     stroke(penCol); //set the pen color
     strokeWeight(brushSize);
@@ -414,11 +424,6 @@ function penHandler() { //standard brush type handler
   }
 }
 
-function eraserHandler() {
-  stroke(220);
-  strokeWeight(brushSize * 2);
-  if (mouseX > 155 && mouseY > 65 && mouseIsPressed) line(pmouseX, pmouseY, mouseX, mouseY);
-}
 
 function pencilHandler() {
   penHandler();
@@ -427,6 +432,7 @@ function pencilHandler() {
 function wiedHandler() {
   stroke(penCol);
   fill(penCol);
+  //colorMode(RGB);
 
   //Mouse coords is middle of invisible box
   let rangeXMin = mouseX - brushSize;
@@ -450,6 +456,7 @@ function wiedHandler() {
 function wiederHandler() {
     stroke(penCol);
     fill(penCol);
+    //colorMode(RGB);
 
     //Mouse coords is middle of invisible box
     let rangeXMin = mouseX - brushSize*4;
@@ -473,6 +480,7 @@ function wiederHandler() {
 function splatterHandler() {
   stroke(penCol);
   fill(penCol);
+  //colorMode(RGB);
 
   //Mouse coords is middle of invisible box
   let rangeXMin = mouseX - brushSize*10;
@@ -493,6 +501,33 @@ function splatterHandler() {
   }
 }
 
+/*
+function rainbowHandler() {
+
+//notes: step0: cycle [235, 52, 52] -> [235, 235, 52] -> [52, 235, 52] -> [52, 235, 235] -> [52, 52, 235] -> 
+
+  if (mouseIsPressed) {   //modified pen handler
+    for (let i = 0; i < 361; i++) {
+      stroke(i); //set the pen color
+      strokeWeight(brushSize);
+      if (mouseX > 155 && mouseY > 65) line(pmouseX, pmouseY, mouseX, mouseY);
+    }
+  } 
+
+}
+*/
+
+
+//Eraser handler
+function eraserHandler() {
+  stroke(220);
+  strokeWeight(brushSize * 2);
+  if (mouseX > 155 && mouseY > 65 && mouseIsPressed) line(pmouseX, pmouseY, mouseX, mouseY);
+}
+
+
+
+//Other handlers
 function clearCanvas() {
   noStroke();
   fill(220);
