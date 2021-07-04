@@ -4,6 +4,8 @@ Created for a school project.
 
 Have fun!
 
+Code is obsfucated to prevent copying.
+
 (text below is copypasta from docs.md)
 
 ## GNU JSIM DOCS
