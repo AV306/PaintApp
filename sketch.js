@@ -22,8 +22,6 @@
 
 let penCol = '#ffffff'; //default pen color: white
 
-let rainbow = []; //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHH
-
 let brushSize = 5;
 
 let brush, eraser, addText, brushS, imageS, addTextS, drawRect, drawRectS, drawCircle, drawCircleS, fillCanvas, fillCanvasS;
@@ -38,6 +36,8 @@ let canvasArea;
 let startX, startY, endX, endY, shapeWidth, shapeHeight; //geh
 
 let brushSizeText, toolText; //var for text to display, technically works without this.
+
+let hue = 0; //hue of rainbow pen 
 
 function preload() {
   brush = loadImage('assets/brush.png');
@@ -108,12 +108,7 @@ function setup() {
   saveButton.size(100, 30);
   saveButton.mousePressed(saveCanvasAsImage);
 
-  let docsButton = createButton('How to use');
-  docsButton.position(0, height - 30);
-  docsButton.size(100, 30);
-  docsButton.mousePressed(openDocs);
-
-  let brushTypeSel = createSelect('Select Brush Type');
+  let brushTypeSel = createSelect('Select Brush Type'); //Brush types selectbox
   brushTypeSel.position(190, 15);
   brushTypeSel.size(100, 30);
   brushTypeSel.option('pen');
@@ -149,12 +144,22 @@ function setup() {
   textToAddInput.size(100, 30);
   textToAddInput.input(textToAddInputEvent);
 
+  let docsButton = createButton('How to use');
+  docsButton.position(0, height - 70);
+  docsButton.size(100, 30);
+  docsButton.mousePressed(openDocs);
+
+  let licenseButton = createButton('View License');
+  licenseButton.position(0, height - 30);
+  licenseButton.size(100, 30);
+  licenseButton.mousePressed(openLicense);
+
   
   
-  /*
-  drawingCnv = get(150, 40, width, height);
-  drawingCnv.mousePressed(getFirstCoordsForRect); //Function names are a balance between meaning and length. 
-  drawingCnv.mouseReleased(getSecondCoordsForRect); //This is bound to break.
+  /* //We don't need this.
+    drawingCnv = get(150, 40, width, height);
+    drawingCnv.mousePressed(getFirstCoordsForRect); //Function names are a balance between meaning and length. 
+    drawingCnv.mouseReleased(getSecondCoordsForRect); //This is bound to break.
   */
 
 
@@ -199,28 +204,31 @@ function draw() {
 
 
   fill(220); noStroke(); 
-  rect(width - 705, 0, 705, 35); //These keeps the text from "bolding".
+  rect(width - 850, 0, 850, 45); //These keeps the text from "bolding".
 
   rect(0, 210, 150, 25); //rects for labels at side (in order)
   rect(0, 340, 150, 25);
   rect(0, 470, 150, 25);
   rect(0, 600, 150, 25);
 
-  fill('black'); textSize(20);
   
-  text(brushSizeText, width - 500, 25); //top bar text
-  text(toolText, width - 330, 25);
-  text('© 2021 AV306', width - 700, 25);
-  text('Color: ', width - 190, 25);
+  fill('black'); textSize(20);
 
+  //top bar text (RTL)
+  text('Color: ', width - 150, 35);
+  text(brushSizeText, width - 425, 35); 
+  text(toolText, width - 280, 35);
+  text('© 2021 AV306 (GNU GPL v3.0)', width - 750, 35);
+  
+  //sidebar text
   text('Input color / hex:', 0, 230);
   text('X, Y of shape:', 0, 360);
   text('W, H of shape:', 0, 490);
   text('Text to add:', 0, 620);
 
-  //current color 
+  //current color rectangle
   stroke(0); strokeWeight(1); fill(penCol);
-  rect(width - 120, 1, 50, 30);
+  rect(width - 90, 11, 50, 30);
   //YAY!
   
 }
@@ -364,7 +372,6 @@ function toolHandler() {
       textHandler(); //this actually works. I can't believe it.
       }
 
-      //tool = "brush"; //This is the only way to stop the looping. Edit: Migrated to the handler itself.
       break;
 
     case "drawRect":
@@ -501,21 +508,21 @@ function splatterHandler() {
   }
 }
 
-/*
+
 function rainbowHandler() {
+  strokeWeight(brushSize);
 
-//notes: step0: cycle [235, 52, 52] -> [235, 235, 52] -> [52, 235, 52] -> [52, 235, 235] -> [52, 52, 235] -> 
+  if (mouseIsPressed) {   //modified pen handler, someday i might make it a common lib (but not today)
+    noStroke();
+    colorMode(HSL, 360); //temporarily set colorMode to HSB for rainbow
 
-  if (mouseIsPressed) {   //modified pen handler
-    for (let i = 0; i < 361; i++) {
-      stroke(i); //set the pen color
-      strokeWeight(brushSize);
-      if (mouseX > 155 && mouseY > 65) line(pmouseX, pmouseY, mouseX, mouseY);
-    }
-  } 
+    stroke(hue, 200, 200); 
+    if (mouseX > 155 && mouseY > 65) line(pmouseX, pmouseY, mouseX, mouseY);
+    hue += 5;
+
+  } else colorMode(RGB);
 
 }
-*/
 
 
 //Eraser handler
@@ -550,7 +557,7 @@ function textHandler() {
 function drawRectHandler() {
   stroke(penCol); noFill();
   strokeWeight(brushSize);
-  rect(startX, startY, shapeWidth, shapeHeight) ;//This just works. Very nice
+  rect(startX, startY, shapeWidth, shapeHeight); //This just works. Very nice
 
   tool = "brush";
 }
@@ -592,7 +599,8 @@ function textToAddInputEvent() {textToAdd = this.value();}
 function hexInputEvent() {penCol = this.value(); }
 function colPickerEvent() {penCol = this.value();}
 function brushTypeSelEvent() {brushType = this.value();}
-function openDocs() {window.open('https://av306.github.io/GNU-JSIM/docs.md')}
+function openDocs() {window.open('https://av306.github.io/GNU-JSIM/docs.md');}
+function openLicense() {window.open('https://av306.github.io/GNU-JSIM/GNU%20GPL%20v3.0.txt');}
 
 
 function getRngCol() {
