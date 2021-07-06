@@ -1,3 +1,8 @@
+---
+permalink: /docs.html
+---
+
+
 # GNU JSIM DOCS
 
 ## How to use: 
