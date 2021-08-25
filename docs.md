@@ -18,6 +18,7 @@ The default tool is the `brush`, which has 5 states:
 5. "`Wieder`": This is a weirder version of "`Wied`", also a failed splatter brush. What it draws looks too weird to describe.
 
 Other tools include:
+
 1. `Eraser`: This behaves in the same way as the pen, but you cannot change its color (#dcdcdc) and is twice the size of the pen.
 2.  `Text`: This adds text at the requested X and Y coords when clicked, then returns to the brush. If clicked when the X and/or Y and/or text fields are empty, it flashes an error message and returns to the brush, but *it continues drawing even when the mouse is not pressed*.
 3. `Rectangle`: This draws a rectangle of the requested width and height at the requested X and Y, which is the top-right corner of the rectangle.
@@ -27,5 +28,14 @@ Other tools include:
 Click any of the 6 colored boxes at the top-right corner to change the pen color.
 
 Modify `drawingCanvasWidth` and `drawingCanvasHeight` to change the height and width of the drawing canvas.
+
+Keybinds:
+
+- Up/down arrows: Change brush size (slider coming soon)
+- `b` key: Switch to brush tool (selected brush subtype)
+- `e` key: Switch to eraser tool
+- `c` key: Clears canvas. (Beware when typing hex values! Will be changed soon)
+- `p` key: Save canvas.
+- `t` key: Add text!
 
 Have fun!
