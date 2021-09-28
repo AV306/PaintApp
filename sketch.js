@@ -1,4 +1,638 @@
-//code obsfucated lmfao
-//have fun!
-//
-const _0x4438=['crosshair','Random\x20Color','addText','assets/fillCanvas.png','View\x20License','1ymnbWt','W,\x20H\x20of\x20shape:','3181CyQgJH','size','\x20Tool:\x20','rainbow','571581wGbNDK','style','pen','assets/drawRect.png','drawRect','eraser','How\x20to\x20use','wied','wieder','One\x20or\x20more\x20required\x20fields\x20are\x20empty.\x20Defaulting\x20all\x20fields\x20to\x200.','#0000ff','splatter','13hJeeKv','canvas.png','X,\x20Y\x20of\x20shape:','input','drawCircle','pencil','Brush\x20size:\x20','assets/drawCircleSelected.png','option','#de8f1f','149xhdrBe','assets/drawRectSelected.png','83eaDQcf','mousePressed','Clear','358FKfuxJ','©\x202021\x20AV306\x20(GNU\x20GPL\x20v3.0)','assets/eraser.png','#ffffff','position','456059DQGRys','app','894LAlnkP','2455KHUdIU','374567wWaaUa','brush','fillCanvas','open','97641ErxIGp','#ff0000','assets/eraserSelected.png','assets/addTextSelected.png','value','assets/addText.png','assets/fillCanvasSelected.png','black','#00ff00','cursor','#000000','getElementById'];const _0xcd31b=_0x344b;(function(_0xd0eb62,_0x147c14){const _0x52bb24=_0x344b;while(!![]){try{const _0x1f23b5=-parseInt(_0x52bb24(0xe7))*-parseInt(_0x52bb24(0xe0))+parseInt(_0x52bb24(0xe8))*parseInt(_0x52bb24(0xdb))+parseInt(_0x52bb24(0xe5))*parseInt(_0x52bb24(0xbf))+parseInt(_0x52bb24(0xc5))+-parseInt(_0x52bb24(0xc1))*-parseInt(_0x52bb24(0xdd))+-parseInt(_0x52bb24(0xe9))+parseInt(_0x52bb24(0xed))*-parseInt(_0x52bb24(0xd1));if(_0x1f23b5===_0x147c14)break;else _0xd0eb62['push'](_0xd0eb62['shift']());}catch(_0x101185){_0xd0eb62['push'](_0xd0eb62['shift']());}}}(_0x4438,0x5172a));let penCol=_0xcd31b(0xe3),brushSize=0x5,brush,eraser,addText,brushS,imageS,addTextS,drawRect,drawRectS,drawCircle,drawCircleS,fillCanvas,fillCanvasS,tool='brush',brushType=_0xcd31b(0xc7),toSave,canvasArea,startX,startY,endX,endY,shapeWidth,shapeHeight,brushSizeText,toolText,hue=0x0;function preload(){const _0x6cf7e=_0xcd31b;brush=loadImage('assets/brush.png'),eraser=loadImage(_0x6cf7e(0xe2)),addText=loadImage(_0x6cf7e(0xf2)),drawRect=loadImage(_0x6cf7e(0xc8)),drawCircle=loadImage('assets/drawCircle.png'),fillCanvas=loadImage(_0x6cf7e(0xfc)),brushS=loadImage('assets/brushSelected.png'),eraserS=loadImage(_0x6cf7e(0xef)),addTextS=loadImage(_0x6cf7e(0xf0)),drawRectS=loadImage(_0x6cf7e(0xdc)),drawCircleS=loadImage(_0x6cf7e(0xd8)),fillCanvasS=loadImage(_0x6cf7e(0xf3));}function setup(){const _0x4d819f=_0xcd31b;document[_0x4d819f(0xf8)](_0x4d819f(0xe6))[_0x4d819f(0xc6)][_0x4d819f(0xf6)]=_0x4d819f(0xf9),createCanvas(0x4b0+0x97,0x4b0+0x3c),background(0xdc),stroke(0x0),strokeWeight(0x1),image(brush,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28),fill(_0x4d819f(0xee)),rect(0x0,0x0,0x32,0x1e),fill(_0x4d819f(0xf5)),rect(0x32,0x0,0x32,0x1e),fill(_0x4d819f(0xcf)),rect(0x64,0x0,0x32,0x1e),fill('#ffff00'),rect(0x0,0x1e,0x32,0x1e),fill(_0x4d819f(0xf7)),rect(0x32,0x1e,0x32,0x1e),fill('#ffffff'),rect(0x64,0x1e,0x32,0x1e);let _0x7b2a17=createColorPicker(_0x4d819f(0xe3));_0x7b2a17[_0x4d819f(0xe4)](0x0,0xa0),_0x7b2a17[_0x4d819f(0xc2)](0x91,0x23),_0x7b2a17[_0x4d819f(0xd4)](colPickerEvent);let _0x2b5e81=createInput(_0x4d819f(0xda));_0x2b5e81[_0x4d819f(0xe4)](0x0,0xf0),_0x2b5e81[_0x4d819f(0xc2)](0x91,0x23),_0x2b5e81[_0x4d819f(0xd4)](hexInputEvent);let _0x387d07=createButton(_0x4d819f(0xfa));_0x387d07[_0x4d819f(0xe4)](0x0,0x11d),_0x387d07[_0x4d819f(0xc2)](0x91,0x23),_0x387d07[_0x4d819f(0xde)](getRngCol);let _0x58cbbb=createButton(_0x4d819f(0xdf));_0x58cbbb[_0x4d819f(0xe4)](0x12c,0xf),_0x58cbbb[_0x4d819f(0xc2)](0x64,0x1e),_0x58cbbb[_0x4d819f(0xde)](clearCanvas);let _0x5dc7e9=createButton('Save');_0x5dc7e9[_0x4d819f(0xe4)](0x19a,0xf),_0x5dc7e9['size'](0x64,0x1e),_0x5dc7e9['mousePressed'](saveCanvasAsImage);let _0x5c9871=createSelect('Select\x20Brush\x20Type');_0x5c9871[_0x4d819f(0xe4)](0xbe,0xf),_0x5c9871['size'](0x64,0x1e),_0x5c9871['option'](_0x4d819f(0xc7)),_0x5c9871[_0x4d819f(0xd9)](_0x4d819f(0xd6)),_0x5c9871[_0x4d819f(0xd9)](_0x4d819f(0xd0)),_0x5c9871['option'](_0x4d819f(0xcc)),_0x5c9871[_0x4d819f(0xd9)](_0x4d819f(0xcd)),_0x5c9871[_0x4d819f(0xd9)]('rainbow'),_0x5c9871['changed'](brushTypeSelEvent);let _0x3520c7=createInput('');_0x3520c7[_0x4d819f(0xe4)](0x0,0x172),_0x3520c7[_0x4d819f(0xc2)](0x64,0x1e),_0x3520c7['input'](startXInputEvent);let _0x42ff47=createInput('');_0x42ff47['position'](0x0,0x1a4),_0x42ff47['size'](0x64,0x1e),_0x42ff47[_0x4d819f(0xd4)](startYInputEvent);let _0x4b9fae=createInput('');_0x4b9fae[_0x4d819f(0xe4)](0x0,0x1f4),_0x4b9fae[_0x4d819f(0xc2)](0x64,0x1e),_0x4b9fae['input'](shapeWidthInputEvent);let _0xc5ccf4=createInput('');_0xc5ccf4[_0x4d819f(0xe4)](0x0,0x226),_0xc5ccf4[_0x4d819f(0xc2)](0x64,0x1e),_0xc5ccf4['input'](shapeHeightInputEvent);let _0x5423e9=createInput('');_0x5423e9[_0x4d819f(0xe4)](0x0,0x276),_0x5423e9['size'](0x64,0x1e),_0x5423e9['input'](textToAddInputEvent);let _0x57e6c0=createButton(_0x4d819f(0xcb));_0x57e6c0[_0x4d819f(0xe4)](0x0,height-0x46),_0x57e6c0[_0x4d819f(0xc2)](0x64,0x1e),_0x57e6c0['mousePressed'](openDocs);let _0x250efd=createButton(_0x4d819f(0xbe));_0x250efd[_0x4d819f(0xe4)](0x0,height-0x1e),_0x250efd['size'](0x64,0x1e),_0x250efd[_0x4d819f(0xde)](openLicense),textAlign(LEFT),textSize(0x14),textStyle(NORMAL);}function _0x344b(_0x32f0fc,_0x58a0df){return _0x344b=function(_0x443859,_0x344b2e){_0x443859=_0x443859-0xbe;let _0x4b08f1=_0x4438[_0x443859];return _0x4b08f1;},_0x344b(_0x32f0fc,_0x58a0df);}function draw(){const _0x2dac65=_0xcd31b;toolHandler(),stroke(0x0),strokeWeight(0x1),image(brush,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28),fill(_0x2dac65(0xee)),rect(0x0,0x0,0x32,0x1e),fill(_0x2dac65(0xf5)),rect(0x32,0x0,0x32,0x1e),fill(_0x2dac65(0xcf)),rect(0x64,0x0,0x32,0x1e),fill('#ffff00'),rect(0x0,0x1e,0x32,0x1e),fill(_0x2dac65(0xf7)),rect(0x32,0x1e,0x32,0x1e),fill(_0x2dac65(0xe3)),rect(0x64,0x1e,0x32,0x1e),brushSizeText=_0x2dac65(0xd7)+brushSize,toolText=_0x2dac65(0xc3)+tool,fill(0xdc),noStroke(),rect(width-0x352,0x0,0x352,0x2d),rect(0x0,0xd2,0x96,0x19),rect(0x0,0x154,0x96,0x19),rect(0x0,0x1d6,0x96,0x19),rect(0x0,0x258,0x96,0x19),fill(_0x2dac65(0xf4)),textSize(0x14),text('Color:\x20',width-0x96,0x23),text(brushSizeText,width-0x1a9,0x23),text(toolText,width-0x118,0x23),text(_0x2dac65(0xe1),width-0x2ee,0x23),text('Input\x20color\x20/\x20hex:',0x0,0xe6),text(_0x2dac65(0xd3),0x0,0x168),text(_0x2dac65(0xc0),0x0,0x1ea),text('Text\x20to\x20add:',0x0,0x26c),stroke(0x0),strokeWeight(0x1),fill(penCol),rect(width-0x5a,0xb,0x32,0x1e);}function keyPressed(){const _0x3e95bb=_0xcd31b;switch(keyCode){case UP_ARROW:brushSize+=0x1;break;case DOWN_ARROW:brushSize-=0x1;break;case 0x42:tool=_0x3e95bb(0xea),brushType=_0x3e95bb(0xc7);break;case 0x45:tool=_0x3e95bb(0xca);break;case 0x43:clearCanvas();break;case 0x50:saveCanvasAsImage();break;case 0x54:tool=_0x3e95bb(0xfb),toolHandler();break;}}function toolHandler(){const _0x151385=_0xcd31b;if(mouseIsPressed){if(mouseX>=0x0&&mouseX<=0x28&&mouseY>=0x46&&mouseY<=0x69)tool=_0x151385(0xea);if(mouseX>=0x2d&&mouseX<=0x55&&mouseY>=0x46&&mouseY<=0x69)tool=_0x151385(0xca);if(mouseX>=0x5a&&mouseX<=0x82&&mouseY>=0x46&&mouseY<=0x69)tool=_0x151385(0xfb);if(mouseX>=0x0&&mouseX<=0x28&&mouseY>=0x73&&mouseY<=0xa0)tool=_0x151385(0xc9);if(mouseX>=0x2d&&mouseX<=0x55&&mouseY>=0x73&&mouseY<=0xa0)tool=_0x151385(0xd5);if(mouseX>=0x5a&&mouseX<=0x82&&mouseY>=0x73&&mouseY<=0xa0)tool=_0x151385(0xeb);if(mouseX>=0x0&&mouseX<=0x32&&mouseY>=0x0&&mouseY<=0x1e)penCol=_0x151385(0xee);if(mouseX>=0x32&&mouseX<=0x64&&mouseY>=0x0&&mouseY<=0x1e)penCol=_0x151385(0xf5);if(mouseX>=0x64&&mouseX<=0x96&&mouseY>=0x0&&mouseY<=0x1e)penCol=_0x151385(0xcf);if(mouseX>=0x0&&mouseX<=0x32&&mouseY>=0x14&&mouseY<=0x3c)penCol='#ffff00';if(mouseX>=0x32&&mouseX<=0x64&&mouseY>=0x14&&mouseY<=0x3c)penCol=_0x151385(0xf7);if(mouseX>=0x64&&mouseX<=0x96&&mouseY>=0x14&&mouseY<=0x3c)penCol=_0x151385(0xe3);}switch(tool){case _0x151385(0xea):switch(brushType){case'pen':penHandler();break;case _0x151385(0xd6):pencilHandler();break;case _0x151385(0xd0):splatterHandler();break;case _0x151385(0xcc):wiedHandler();break;case _0x151385(0xcd):wiederHandler();break;case _0x151385(0xc4):rainbowHandler();break;}noStroke(),fill(0xdc),rect(0x0,0x43,0x95,0x64),image(brushS,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28);break;case'eraser':eraserHandler(),noStroke(),fill(0xdc),rect(0x0,0x44,0x95,0x64),image(brush,0x0,0x46,0x28,0x28),image(eraserS,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28);break;case _0x151385(0xfb):noStroke(),fill(0xdc),rect(0x0,0x44,0x95,0x64),image(brush,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addTextS,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28);startX==null||startY==null||textToAdd==null?(alert(_0x151385(0xce)),startX=0x0,startY=0x0,textToAdd=0x0):textHandler();break;case'drawRect':noStroke(),fill(0xdc),rect(0x0,0x44,0x95,0x64),image(brush,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRectS,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28),drawRectHandler();break;case _0x151385(0xd5):noStroke(),fill(0xdc),rect(0x0,0x44,0x95,0x64),image(brush,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircleS,0x2d,0x73,0x28,0x28),image(fillCanvas,0x5a,0x73,0x28,0x28),drawCircleHandler();break;case _0x151385(0xeb):noStroke(),fill(0xdc),rect(0x0,0x44,0x95,0x64),image(brush,0x0,0x46,0x28,0x28),image(eraser,0x2d,0x46,0x28,0x28),image(addText,0x5a,0x46,0x28,0x28),image(drawRect,0x0,0x73,0x28,0x28),image(drawCircle,0x2d,0x73,0x28,0x28),image(fillCanvasS,0x5a,0x73,0x28,0x28),fillCanvasHandler(),tool=_0x151385(0xea);}}function penHandler(){if(mouseIsPressed){stroke(penCol),strokeWeight(brushSize);if(mouseX>0x9b&&mouseY>0x41)line(pmouseX,pmouseY,mouseX,mouseY);}}function pencilHandler(){penHandler();}function wiedHandler(){stroke(penCol),fill(penCol);let _0x37fe83=mouseX-brushSize,_0x45d378=mouseY-brushSize,_0x5c9b25=mouseX+brushSize,_0x469d23=mouseY+brushSize,_0x12e453=random(0x50,0x12c),_0x19e64b=random(0x1,brushSize+0x19),_0x11ad0b,_0x22819c;if(mouseIsPressed&&mouseX>0x9b&&mouseY>0x41)for(let _0x35db5e=0x0;_0x35db5e<_0x12e453;_0x35db5e++){_0x11ad0b=random(_0x37fe83,_0x5c9b25),_0x22819c=random(_0x45d378,_0x469d23),circle(_0x11ad0b,_0x22819c,_0x19e64b);}}function wiederHandler(){stroke(penCol),fill(penCol);let _0x4ca79b=mouseX-brushSize*0x4,_0x227b10=mouseY-brushSize*0x4,_0x5c1adb=mouseX+brushSize*0x4,_0x25ff30=mouseY+brushSize*0x4,_0x2c1fec=random(0x50,0x12c),_0x360c07=random(0x1,brushSize+0x19),_0x2350fd,_0x535661;if(mouseIsPressed&&mouseX>0x9b&&mouseY>0x41)for(let _0x4599ce=0x0;_0x4599ce<_0x2c1fec;_0x4599ce++){_0x2350fd=random(_0x4ca79b,_0x5c1adb),_0x535661=random(_0x227b10,_0x25ff30),circle(_0x2350fd,_0x535661,_0x360c07);}}function splatterHandler(){stroke(penCol),fill(penCol);let _0xa13a7f=mouseX-brushSize*0xa,_0xb65abd=mouseY-brushSize*0xa,_0x4ce7e6=mouseX+brushSize*0xa,_0x3adfed=mouseY+brushSize*0xa,_0x2d7ad8=random(0x5,0x19),_0x2bc816=random(0x1,brushSize+0xa),_0x5c3b03,_0x48d9e0;if(mouseIsPressed&&mouseX>0x9b&&mouseY>0x41)for(let _0x216230=0x0;_0x216230<_0x2d7ad8;_0x216230++){_0x5c3b03=random(_0xa13a7f,_0x4ce7e6),_0x48d9e0=random(_0xb65abd,_0x3adfed),circle(_0x5c3b03,_0x48d9e0,_0x2bc816);}}function rainbowHandler(){strokeWeight(brushSize);if(mouseIsPressed){noStroke(),colorMode(HSL,0x168),stroke(hue,0xc8,0xc8);if(mouseX>0x9b&&mouseY>0x41)line(pmouseX,pmouseY,mouseX,mouseY);if(hue<=0x168)hue+=0x5;else hue=0x0;}else colorMode(RGB);}function eraserHandler(){stroke(0xdc),strokeWeight(brushSize*0x2);if(mouseX>0x9b&&mouseY>0x41&&mouseIsPressed)line(pmouseX,pmouseY,mouseX,mouseY);}function clearCanvas(){noStroke(),fill(0xdc),rect(0x0,0x0,width,height);}function saveCanvasAsImage(){const _0x2d0d34=_0xcd31b;toSave=get(0x97,0x3c,width-0x97,height-0x3c),toSave['save'](_0x2d0d34(0xd2));}function textHandler(){const _0x2d00f9=_0xcd31b;fill(penCol),noStroke(),textSize(brushSize*0x4),text(textToAdd,startX,startY),tool=_0x2d00f9(0xea);}function drawRectHandler(){const _0x47e031=_0xcd31b;stroke(penCol),noFill(),strokeWeight(brushSize),rect(startX,startY,shapeWidth,shapeHeight),tool=_0x47e031(0xea);}function drawCircleHandler(){const _0x4c4eb4=_0xcd31b;stroke(penCol),noFill(),strokeWeight(brushSize),ellipse(startX,startY,shapeWidth,shapeHeight),tool=_0x4c4eb4(0xea);}function fillCanvasHandler(){fill(penCol),noStroke(),rect(0x0,0x0,width,height);}function startXInputEvent(){const _0x48cfd6=_0xcd31b;startX=this[_0x48cfd6(0xf1)]();}function startYInputEvent(){const _0x3eaf20=_0xcd31b;startY=this[_0x3eaf20(0xf1)]();}function shapeWidthInputEvent(){shapeWidth=this['value']();}function shapeHeightInputEvent(){const _0xcf0679=_0xcd31b;shapeHeight=this[_0xcf0679(0xf1)]();}function textToAddInputEvent(){textToAdd=this['value']();}function hexInputEvent(){penCol=this['value']();}function colPickerEvent(){const _0x177e84=_0xcd31b;penCol=this[_0x177e84(0xf1)]();}function brushTypeSelEvent(){const _0x54b249=_0xcd31b;brushType=this[_0x54b249(0xf1)]();}function openDocs(){const _0x30bf91=_0xcd31b;window[_0x30bf91(0xec)]('https://av306.github.io/PaintApp/docs');}function openLicense(){window['open']('https://av306.github.io/PaintApp/GNU%20GPL%20v3.0.txt');}function getRngCol(){let _0x57bdf3=random(0x0,0x100),_0x42c5b8=random(0x0,0x100),_0x4a8004=random(0x0,0x100);penCol=[_0x57bdf3,_0x42c5b8,_0x4a8004];}
+/*
+  Copyright (C) 2021-present AV306
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+//WOO LET'S GOOOOOOOOOOO
+//Last modified 6/7/2021
+//I need to refactor this someday
+
+
+
+let penCol = '#ffffff'; //default pen color: white
+
+let brushSize = 5;
+
+let brush, eraser, addText, brushS, imageS, addTextS, drawRect, drawRectS, drawCircle, drawCircleS, fillCanvas, fillCanvasS;
+
+let tool = "brush"; //self-explanatory. 
+let brushType = "pen"; //brush types: standard, pencil, splatter. Pencil not functional rn
+
+let toSave;
+
+let canvasArea;
+
+let startX, startY, endX, endY, shapeWidth, shapeHeight; //geh
+
+let brushSizeText, toolText; //var for text to display, technically works without this.
+
+let hue = 0; //hue of rainbow pen 
+
+//let fps;
+
+function preload() {
+  brush = loadImage('assets/brush.png');
+  eraser = loadImage('assets/eraser.png');
+  addText = loadImage('assets/addText.png'); 
+  drawRect = loadImage('assets/drawRect.png');
+  drawCircle = loadImage('assets/drawCircle.png');
+  fillCanvas = loadImage('assets/fillCanvas.png');
+
+
+  brushS = loadImage('assets/brushSelected.png');
+  eraserS = loadImage('assets/eraserSelected.png');
+  addTextS = loadImage('assets/addTextSelected.png');
+  drawRectS = loadImage('assets/drawRectSelected.png');
+  drawCircleS = loadImage('assets/drawCircleSelected.png');
+  fillCanvasS = loadImage('assets/fillCanvasSelected.png');
+
+}
+
+
+function setup() {
+  document.getElementById("app").style.cursor = "crosshair";
+  createCanvas(/*Width*/ 1200 + 151, /*Height*/ 1200 + 90); //...I'm just gonna trust this is a square. Edit: It is.
+  background(220);
+  stroke(0);
+
+  strokeWeight(1);
+  
+  image(brush, 0, 70, 40, 40); //button images; duplicate of that in `draw()` for posterity. Can be removed.
+  image(eraser, 45, 70, 40, 40);
+  image(addText, 90, 70, 40, 40);
+  image(drawRect, 0, 115, 40, 40);
+  image(drawCircle, 45, 115, 40, 40);
+  image(fillCanvas, 90, 115, 40, 40);
+
+  
+  fill("#ff0000"); rect(0, 0, 50, 30); //red swatch
+  fill('#00ff00'); rect(50, 0, 50, 30); //green swatch
+  fill('#0000ff'); rect(100, 0, 50, 30); //blu swatch
+  
+  fill('#ffff00'); rect(0, 30, 50, 30); //yellow swatch
+  fill('#000000'); rect(50, 30, 50, 30); //black swatch
+  fill('#ffffff'); rect(100, 30, 50, 30); //white swatch
+  
+
+  let colorPicker = createColorPicker('#ffffff');
+  colorPicker.position(0, 160);
+  colorPicker.size(145, 35);
+  colorPicker.input(colPickerEvent);
+  
+  let hexInput = createInput('#de8f1f');
+  hexInput.position(0, 240);
+  hexInput.size(145, 35);
+  hexInput.input(hexInputEvent);
+
+  let rngColButton = createButton('Random Color');
+  rngColButton.position(0, 285);
+  rngColButton.size(145, 35);
+  rngColButton.mousePressed(getRngCol);
+
+  let clearButton = createButton('Clear');
+  clearButton.position(300, 15);
+  clearButton.size(100, 30);
+  clearButton.mousePressed(clearCanvas);
+
+  let saveButton = createButton('Save');
+  saveButton.position(410, 15);
+  saveButton.size(100, 30);
+  saveButton.mousePressed(saveCanvasAsImage);
+
+  let brushTypeSel = createSelect('Select Brush Type'); //Brush types selectbox
+  brushTypeSel.position(190, 15);
+  brushTypeSel.size(100, 30);
+  brushTypeSel.option('pen');
+  brushTypeSel.option('pencil');
+  brushTypeSel.option('splatter');
+  brushTypeSel.option('wied');
+  brushTypeSel.option('wieder');
+  brushTypeSel.option('rainbow');
+  brushTypeSel.changed(brushTypeSelEvent);
+
+  let startXInput = createInput(''); //Input for X of rect
+  startXInput.position(0, 370);
+  startXInput.size(100, 30);
+  startXInput.input(startXInputEvent);
+
+  let startYInput = createInput(''); //Input for Y of rect
+  startYInput.position(0, 420);
+  startYInput.size(100, 30);
+  startYInput.input(startYInputEvent);
+
+  let shapeWidthInput = createInput('');
+  shapeWidthInput.position(0, 500);
+  shapeWidthInput.size(100, 30);
+  shapeWidthInput.input(shapeWidthInputEvent);
+
+  let shapeHeightInput = createInput('');
+  shapeHeightInput.position(0, 550);
+  shapeHeightInput.size(100, 30);
+  shapeHeightInput.input(shapeHeightInputEvent);
+
+  let textToAddInput = createInput('');
+  textToAddInput.position(0, 630);
+  textToAddInput.size(100, 30);
+  textToAddInput.input(textToAddInputEvent);
+
+  let docsButton = createButton('How to use');
+  docsButton.position(0, height - 70);
+  docsButton.size(100, 30);
+  docsButton.mousePressed(openDocs);
+
+  let licenseButton = createButton('View License');
+  licenseButton.position(0, height - 30);
+  licenseButton.size(100, 30);
+  licenseButton.mousePressed(openLicense);
+
+  /*
+  let frameRateSlider = createSlider(5, 60, 30, 5); //min: 5; max: 60; default: 30; step: 5
+  frameRateSlider.position(150, height - 25);
+  frameRateSlider.size(110);
+  
+  let frameRateInput = createInput('');
+  frameRateInput.position(300, height - 31);
+  frameRateInput.size(100, 25);
+  frameRateInput.input(fpsInput);
+  */
+  
+  
+  /* //We don't need this.
+    drawingCnv = get(150, 40, width, height);
+    drawingCnv.mousePressed(getFirstCoordsForRect); //Function names are a balance between meaning and length. 
+    drawingCnv.mouseReleased(getSecondCoordsForRect); //This is bound to break.
+  */
+
+
+  //line(0, 40, width, 40);
+  
+  textAlign(LEFT);
+  textSize(20);
+  textStyle(NORMAL);
+}
+
+
+function draw() {
+  
+  //console.log(mouseX, mouseY);
+
+  
+  toolHandler();
+  
+  
+  stroke(0);
+
+  strokeWeight(1);
+  
+  image(brush, 0, 70, 40, 40); //button images
+  image(eraser, 45, 70, 40, 40); //This works here, don't touch it.
+  image(addText, 90, 70, 40, 40);
+  image(drawRect, 0, 115, 40, 40);
+  image(drawCircle, 45, 115, 40, 40);
+  image(fillCanvas, 90, 115, 40, 40);
+
+  
+  fill("#ff0000"); rect(0, 0, 50, 30); //red swatch
+  fill('#00ff00'); rect(50, 0, 50, 30); //green swatch
+  fill('#0000ff'); rect(100, 0, 50, 30); //blu swatch
+  
+  fill('#ffff00'); rect(0, 30, 50, 30); //yellow swatch
+  fill('#000000'); rect(50, 30, 50, 30); //black swatch
+  fill('#ffffff'); rect(100, 30, 50, 30); //white swatch
+
+
+  brushSizeText = "Brush size: " + brushSize;
+  toolText = " Tool: " + tool;
+
+
+  //begin rects;
+  fill(220); noStroke(); 
+  rect(width - 850, 0, 850, 45); //These keeps the text from "bolding".
+
+  rect(0, 210, 150, 25); //rects for labels at side (in order)
+  rect(0, 340, 150, 25);
+  rect(0, 470, 150, 25);
+  rect(0, 600, 150, 25);
+
+  //rect for falied actionbar
+  rect(0, height - 30, width, 30);
+
+  
+  //begin texts
+  fill('black'); textSize(20);
+
+  //top bar text (RTL)
+  text('Color: ', width - 150, 35);
+  text(brushSizeText, width - 425, 35); 
+  text(toolText, width - 280, 35);
+  text('© 2021 AV306 (GNU GPL v3.0)', width - 750, 35);
+  
+  //sidebar text
+  text('Input color / hex:', 0, 230);
+  text('X, Y of shape:', 0, 360);
+  text('W, H of shape:', 0, 490);
+  text('Text to add:', 0, 620);
+
+  //failed actionbar text
+  //text('FPS: ', 400, height - 30);
+  //text(fps, 400, height - 30);
+
+  //current color rectangle
+  stroke(0); strokeWeight(1); fill(penCol);
+  rect(width - 90, 11, 50, 30);
+  //YAY!
+  
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+//custom listeners
+
+function keyPressed() { //Keybinds
+  switch (keyCode) {
+    case UP_ARROW:
+      brushSize += 1;
+      break;
+      
+    case DOWN_ARROW:
+      brushSize -= 1;
+      break;
+    
+    case 66: //b key
+      tool = "brush";
+      brushType = "pen";
+      break;
+
+    case 69: //e key
+      //questionable
+      tool = "eraser";
+      break;
+
+    case 67: //c key
+      clearCanvas();
+      break;
+
+    case 80: //p key
+      saveCanvasAsImage();
+      break;
+    
+    case 84: //t key
+      tool = "addText";
+      toolHandler(); //YEAH LETS GO IT WORKS
+      break;
+  }
+}
+
+
+function toolHandler() {
+  
+  if (mouseIsPressed) { //Thing that handles what was clicked
+    if (mouseX >= 0 && mouseX <= 40 && mouseY >= 70 && mouseY <= 105) tool = "brush";
+    if (mouseX >= 45 && mouseX <= 85 && mouseY >= 70 && mouseY <= 105) tool = "eraser";
+    if (mouseX >= 90 && mouseX <= 130 && mouseY >= 70 && mouseY <= 105) tool = "addText";
+    if (mouseX >= 0 && mouseX <= 40 && mouseY >= 115 && mouseY <= 160) tool = "drawRect";
+    if (mouseX >= 45 && mouseX <= 85 && mouseY >= 115 && mouseY <= 160) tool = "drawCircle";
+    if (mouseX >= 90 && mouseX <= 130 && mouseY >= 115 && mouseY <= 160) tool = "fillCanvas";
+
+
+    if (mouseX >= 0 && mouseX <= 50 && mouseY >= 0 && mouseY <= 30) penCol = '#ff0000'; //red
+    if (mouseX >= 50 && mouseX <= 100 && mouseY >= 0 && mouseY <= 30) penCol = '#00ff00'; //green
+    if (mouseX >= 100 && mouseX <= 150 && mouseY >= 0 && mouseY <= 30) penCol = '#0000ff'; //blu
+    if (mouseX >= 0 && mouseX <= 50 && mouseY >= 20 && mouseY <= 60) penCol = '#ffff00'; //yellow
+    if (mouseX >= 50 && mouseX <= 100 && mouseY >= 20 && mouseY <= 60) penCol = '#000000'; //black
+    if (mouseX >= 100 && mouseX <= 150 && mouseY >= 20 && mouseY <= 60) penCol = '#ffffff'; //white
+    
+  }
+  
+  switch (tool) {
+    case "brush":
+
+      switch (brushType) {
+        case "pen":
+          penHandler();
+          break;
+        
+        case "pencil":
+          pencilHandler();
+          break;
+
+        case "splatter":
+          splatterHandler();
+          break;
+
+        case "wied":
+          wiedHandler();
+          break;
+
+        case "wieder":
+          wiederHandler();
+          break;
+
+        case 'rainbow':
+          rainbowHandler();
+          break;
+
+      }
+
+      noStroke(); fill(220);
+      rect(0, 67, 149, 100);
+      image(brushS, 0, 70, 40, 40);
+      image(eraser, 45, 70, 40, 40); //sets images
+      image(addText, 90, 70, 40, 40); 
+      image(drawRect, 0, 115, 40, 40);
+      image(drawCircle, 45, 115, 40, 40);
+      image(fillCanvas, 90, 115, 40, 40);
+      break;
+      
+    case "eraser":
+      eraserHandler();
+
+      noStroke(); fill(220);
+      rect(0, 68, 149, 100);
+      image(brush, 0, 70, 40, 40);
+      image(eraserS, 45, 70, 40, 40);
+      image(addText, 90, 70, 40, 40); 
+      image(drawRect, 0, 115, 40, 40);
+      image(drawCircle, 45, 115, 40, 40);
+      image(fillCanvas, 90, 115, 40, 40);
+      break;
+
+    case "addText":
+      noStroke(); fill(220);
+      rect(0, 68, 149, 100);
+      image(brush, 0, 70, 40, 40);
+      image(eraser, 45, 70, 40, 40);
+      image(addTextS, 90, 70, 40, 40);
+      image(drawRect, 0, 115, 40, 40);
+      image(drawCircle, 45, 115, 40, 40);
+      image(fillCanvas, 90, 115, 40, 40);
+      
+      if (startX == null || startY == null || textToAdd == null) {
+        alert("One or more required fields are empty. Defaulting all fields to 0.");
+        startX = 0;
+        startY = 0;
+        textToAdd = 0; //failsafe
+      } else {
+      textHandler(); //this actually works. I can't believe it.
+      }
+
+      break;
+
+    case "drawRect":
+      noStroke(); fill(220);
+      rect(0, 68, 149, 100);
+      image(brush, 0, 70, 40, 40);
+      image(eraser, 45, 70, 40, 40);
+      image(addText, 90, 70, 40, 40);
+      image(drawRectS, 0, 115, 40, 40);
+      image(drawCircle, 45, 115, 40, 40);
+      image(fillCanvas, 90, 115, 40, 40);
+
+      drawRectHandler(); //whee
+      //tool = "brush";
+      break;
+
+    case "drawCircle":
+      noStroke(); fill(220);
+      rect(0, 68, 149, 100);
+      image(brush, 0, 70, 40, 40);
+      image(eraser, 45, 70, 40, 40);
+      image(addText, 90, 70, 40, 40);
+      image(drawRect, 0, 115, 40, 40);
+      image(drawCircleS, 45, 115, 40, 40);
+      image(fillCanvas, 90, 115, 40, 40);
+
+      drawCircleHandler();
+      //tool = "brush";
+      break;
+
+    case "fillCanvas":
+      noStroke(); fill(220);
+      rect(0, 68, 149, 100);
+      image(brush, 0, 70, 40, 40);
+      image(eraser, 45, 70, 40, 40);
+      image(addText, 90, 70, 40, 40);
+      image(drawRect, 0, 115, 40, 40);
+      image(drawCircle, 45, 115, 40, 40);
+      image(fillCanvasS, 90, 115, 40, 40);
+
+      fillCanvasHandler();
+
+      tool = "brush";
+
+  } 
+}
+
+
+//Block of handlers
+function penHandler() { //standard brush type handler
+  //colorMode(RGB);
+
+  if (mouseIsPressed) {   
+    stroke(penCol); //set the pen color
+    strokeWeight(brushSize);
+    if (mouseX > 155 && mouseY > 65 && mouseY < height - 30) line(pmouseX, pmouseY, mouseX, mouseY);
+  }
+}
+
+
+function pencilHandler() {
+  penHandler(); //we'll do this someday.
+}
+
+function wiedHandler() {
+  stroke(penCol);
+  fill(penCol);
+  //colorMode(RGB);
+
+  //Mouse coords is middle of invisible box
+  let rangeXMin = mouseX - brushSize;
+  let rangeYMin = mouseY - brushSize;
+  let rangeXMax = mouseX + brushSize;
+  let rangeYMax = mouseY + brushSize;
+  let operations = random(80, 300);
+  let dotSize = random(1, brushSize + 25);
+  let dotPosX;
+  let dotPosY;
+
+  if (mouseIsPressed && mouseX > 155 && mouseY > 65 && mouseY < height - 30) {
+    for (let i = 0; i < operations; i++){
+      dotPosX = random(rangeXMin, rangeXMax);
+      dotPosY = random(rangeYMin, rangeYMax);
+      circle(dotPosX, dotPosY, dotSize);
+    }
+  }
+}
+
+function wiederHandler() {
+    stroke(penCol);
+    fill(penCol);
+    //colorMode(RGB);
+
+    //Mouse coords is middle of invisible box
+    let rangeXMin = mouseX - brushSize*4;
+    let rangeYMin = mouseY - brushSize*4;
+    let rangeXMax = mouseX + brushSize*4;
+    let rangeYMax = mouseY + brushSize*4;
+    let operations = random(80, 300);
+    let dotSize = random(1, brushSize + 25);
+    let dotPosX;
+    let dotPosY;
+  
+    if (mouseIsPressed && mouseX > 155 && mouseY > 65 && mouseY < height - 30) {
+      for (let i = 0; i < operations; i++){
+        dotPosX = random(rangeXMin, rangeXMax);
+        dotPosY = random(rangeYMin, rangeYMax);
+        circle(dotPosX, dotPosY, dotSize);
+      }
+    }
+}
+
+function splatterHandler() {
+  stroke(penCol);
+  fill(penCol);
+  //colorMode(RGB);
+
+  //Mouse coords is middle of invisible box
+  let rangeXMin = mouseX - brushSize*10;
+  let rangeYMin = mouseY - brushSize*10;
+  let rangeXMax = mouseX + brushSize*10;
+  let rangeYMax = mouseY + brushSize*10;
+  let operations = random(5, 25);
+  let dotSize = random(1, brushSize + 10);
+  let dotPosX;
+  let dotPosY;
+
+  if (mouseIsPressed && mouseX > 155 && mouseY > 65 && mouseY < height - 30) {
+    for (let i = 0; i < operations; i++){
+      dotPosX = random(rangeXMin, rangeXMax);
+      dotPosY = random(rangeYMin, rangeYMax);
+      circle(dotPosX, dotPosY, dotSize);
+    }
+  }
+}
+
+
+//Rainbow brush!
+function rainbowHandler() {
+  strokeWeight(brushSize);
+
+  //modified pen handler, someday I might make it a common lib (but not today)
+  if (mouseIsPressed) {   
+    noStroke();
+    colorMode(HSL, 360); //temporarily set colorMode to HSB for rainbow
+
+    stroke(hue, 200, 225); 
+    if (mouseX > 155 && mouseY > 65 && mouseY < height - 30) line(pmouseX, pmouseY, mouseX, mouseY);
+    if (hue <= 360) hue += 5; else hue = 0;
+
+  } else colorMode(RGB);
+}
+
+
+//Eraser handler
+function eraserHandler() {
+  stroke(220);
+  strokeWeight(brushSize * 2);
+  if (mouseX > 155 && mouseY > 65 && mouseY < height - 30 && mouseIsPressed) line(pmouseX, pmouseY, mouseX, mouseY);
+}
+
+
+
+//Other handlers
+function clearCanvas() {
+  noStroke();
+  fill(220);
+  rect(0, 0, width, height);
+}
+
+function saveCanvasAsImage() {
+  toSave = get(151, 60, width - 151, height - 90);
+  toSave.save("canvas.png");
+
+}
+
+function textHandler() {
+  fill(penCol); noStroke(); textSize(brushSize * 4);
+  text(textToAdd, startX, startY);
+
+  tool = "brush";
+}
+
+function drawRectHandler() {
+  stroke(penCol); noFill();
+  strokeWeight(brushSize);
+  rect(startX, startY, shapeWidth, shapeHeight); //This just works. Very nice
+
+  tool = "brush";
+}
+
+function drawCircleHandler() {
+  stroke(penCol); noFill(); strokeWeight(brushSize);
+  ellipse(startX, startY, shapeWidth, shapeHeight);
+
+  tool = "brush";
+}
+
+function fillCanvasHandler() {
+  fill(penCol); noStroke();
+  rect(0, 0, width, height);
+}
+
+
+// These might come in useful someday. For now, they aren't. Don't touch 'em
+/*
+function getFirstCoordsForRect() {
+  startX = mouseX;
+  startY = mouseY; //most useless yet useful function.
+}
+
+
+function getSecondCoordsForRect() {
+  endX = mouseX;
+  endY = mouseY;
+}
+*/ 
+
+
+//Block of input events
+function startXInputEvent() {startX = this.value();}
+function startYInputEvent() {startY = this.value();}
+function shapeWidthInputEvent() {shapeWidth = this.value();}
+function shapeHeightInputEvent() {shapeHeight = this.value();}
+function textToAddInputEvent() {textToAdd = this.value();}
+function hexInputEvent() {penCol = this.value(); }
+function colPickerEvent() {penCol = this.value();}
+function brushTypeSelEvent() {brushType = this.value();}
+function openDocs() {window.open('https://av306.github.io/GNU-JSIM/docs');} //https://av306.github.io/PaintApp/docs
+function openLicense() {window.open('https://av306.github.io/GNU-JSIM/GNU%20GPL%20v3.0.txt');} //https://av306.github.io/PaintApp/GNU%20GPL%20v3.0.txt
+//function fpsInput() {fps = this.value();} //failed. Don't touch ever
+
+
+function getRngCol() {
+  let red = random(0, 256);
+  let green = random(0, 256);
+  let blue = random(0, 256);
+  penCol = [red, green, blue]; //yeah, this is big brain time. Passing colors as an array :P
+}
