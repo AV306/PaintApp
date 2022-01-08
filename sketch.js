@@ -123,7 +123,7 @@ function setup() {
   brushTypeSel.option('rainbow');
   brushTypeSel.changed(brushTypeSelEvent);
 
-  let startXInput = createInput(''); / /Input for X of rect
+  let startXInput = createInput(''); // Input for X of rect
   startXInput.position(0, 370);
   startXInput.size(100, 30);
   startXInput.input(startXInputEvent);
