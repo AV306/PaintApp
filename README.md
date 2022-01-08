@@ -1,16 +1,12 @@
-# GNU-JSIM (PRODUCTION-READY DEPLOYMENT)
+# PaintApp
 
 Created for a school project.
 
 Have fun!
 
-Code is obsfucated to prevent copying. Rip if you tried 
-
-*Unobsfucated* code licensed under the GNU GPL v3.0.
-
 (text below is copypasta from docs.md)
 
-## GNU JSIM DOCS
+## PaintApp DOCS
 
 ### How to use: 
 
