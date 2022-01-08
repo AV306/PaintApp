@@ -35,11 +35,11 @@ let toSave;
 
 let canvasArea;
 
-let startX, startY, endX, endY, shapeWidth, shapeHeight; //geh
+let startX, startY, endX, endY, shapeWidth, shapeHeight; // geh
 
-let brushSizeText, toolText; //var for text to display, technically works without this.
+let brushSizeText, toolText; // var for text to display, technically works without this.
 
-let hue = 0; //hue of rainbow pen 
+let hue = 0; // hue of rainbow pen 
 
 //let fps;
 
@@ -64,13 +64,13 @@ function preload() {
 
 function setup() {
   document.getElementById("app").style.cursor = "crosshair";
-  createCanvas(/*Width*/ 1200 + 151, /*Height*/ 1200 + 90); //...I'm just gonna trust this is a square. Edit: It is.
+  createCanvas(/*Width*/ 1200 + 151, /*Height*/ 1200 + 90); // ...I'm just gonna trust this is a square. Edit: It is.
   background(220);
   stroke(0);
 
   strokeWeight(1);
   
-  image(brush, 0, 70, 40, 40); //button images; duplicate of that in `draw()` for posterity. Can be removed.
+  image(brush, 0, 70, 40, 40); // button images; duplicate of that in `draw()` for posterity. Can be removed.
   image(eraser, 45, 70, 40, 40);
   image(addText, 90, 70, 40, 40);
   image(drawRect, 0, 115, 40, 40);
@@ -78,9 +78,9 @@ function setup() {
   image(fillCanvas, 90, 115, 40, 40);
 
   
-  fill("#ff0000"); rect(0, 0, 50, 30); //red swatch
-  fill('#00ff00'); rect(50, 0, 50, 30); //green swatch
-  fill('#0000ff'); rect(100, 0, 50, 30); //blu swatch
+  fill("#ff0000"); rect(0, 0, 50, 30); // red swatch
+  fill('#00ff00'); rect(50, 0, 50, 30); // green swatch
+  fill('#0000ff'); rect(100, 0, 50, 30); // blu swatch
   
   fill('#ffff00'); rect(0, 30, 50, 30); //yellow swatch
   fill('#000000'); rect(50, 30, 50, 30); //black swatch
