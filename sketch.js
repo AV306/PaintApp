@@ -359,7 +359,7 @@ function toolHandler() {
       noStroke(); fill(220);
       rect(0, 67, 149, 100);
       image(brushS, 0, 70, 40, 40);
-      image(eraser, 45, 70, 40, 40); / sets images
+      image(eraser, 45, 70, 40, 40); // sets images
       image(addText, 90, 70, 40, 40); 
       image(drawRect, 0, 115, 40, 40);
       image(drawCircle, 45, 115, 40, 40);
