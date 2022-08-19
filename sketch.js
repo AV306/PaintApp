@@ -16,10 +16,14 @@
 */
 
 // WOO LET'S GOOOOOOOOOOO
-// Last modified 6/7/2021
+// Last modified 19/8/2022
+// Last last modified 6/7/2021
 // I need to refactor this someday
 // NOTE: Does not follow my current styleguide, and I only changed comment styles up to line 125.
 
+
+const cw = 1280;
+const ch = 720;
 
 
 let penCol = '#ffffff'; // default pen color: white
@@ -64,7 +68,7 @@ function preload() {
 
 function setup() {
   document.getElementById("app").style.cursor = "crosshair";
-  createCanvas(/*Width*/ 1200 + 151, /*Height*/ 1200 + 90); // ...I'm just gonna trust this is a square. Edit: It is.
+  createCanvas(/*Width*/ cw + 151, /*Height*/ ch + 90); // ...I'm just gonna trust this is a square. Edit: It is.
   background(220);
   stroke(0);
 
