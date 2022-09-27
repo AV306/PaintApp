@@ -3,7 +3,7 @@ permalink: /docs.html
 ---
 
 
-# GNU JSIM DOCS
+# PaintApp Docs
 
 ## How to use: 
 
